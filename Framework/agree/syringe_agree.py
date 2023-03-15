@@ -2,42 +2,42 @@
 
 class _Syringe:
     @staticmethod
-    def _injection_component(instance_cls, *args):
+    def _injection_component(instance_cls, attrs):
         
         return instance_cls
 
     @staticmethod
-    def _injection_lib(instance_cls, *args):
+    def _injection_lib(instance_cls, attrs):
 
         return instance_cls
     
     @staticmethod
-    def _injection_loader(instance_cls, *args):
+    def _injection_loader(instance_cls, attrs):
 
         return instance_cls
     
     @staticmethod
-    def _injection_logger(instance_cls, *args):
+    def _injection_logger(instance_cls, attrs):
 
         return instance_cls
     
     @staticmethod
-    def _injection_monitor(instance_cls, *args):
+    def _injection_monitor(instance_cls, attrs):
 
         return instance_cls
     
     @staticmethod
-    def _injection_runner(instance_cls, *args):
+    def _injection_runner(instance_cls, attrs):
 
         return instance_cls
     
     @staticmethod
-    def _injection_test(instance_cls, *args):
+    def _injection_test(instance_cls, attrs):
 
         return instance_cls
 
 
-def _injection(name_cls: str, instance_cls):
+def _injection(name_cls: str, instance_cls, attrs):
     """
     本函数起到的作用为分派，将参数依照name_cls传入到获取的不同静态方法中
     :param name_cls: 类名称
@@ -45,7 +45,7 @@ def _injection(name_cls: str, instance_cls):
     :return: 元类的实例对象——类
     """
 
-    return getattr(_Syringe, '_injection_' + name_cls.lower())(instance_cls)
+    return getattr(_Syringe, '_injection_' + name_cls.lower())(instance_cls, attrs)
 
 
 class AgreeMeta(type):
@@ -56,7 +56,7 @@ class AgreeMeta(type):
 
     def __new__(mcs, name, bases, attrs):
         attrs["_instance"] = None
-        return _injection(name, super().__new__(mcs, name, bases, attrs))
+        return _injection(name, super().__new__(mcs, name, bases, attrs), attrs)
 
     def __call__(self, *args, **kwargs):
         if self._instance is None:
