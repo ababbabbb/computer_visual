@@ -1,0 +1,29 @@
+App:
+  type_work: 'monomer'    # monomer-> 单体应用; web -> 网络应用; exe -> exe文件; component -> 插件
+  debug: 'True'
+  lib: '...'
+  component: [
+    {
+      name: '...',
+      path_config: '...'
+    },
+    {
+      name: '...',
+      path_config: '...'
+    }
+  ]
+  data_source: [
+    {
+      name: 'Data1',
+      type: 'file',  # file 外源性数据为文件; custom 外源性数据由自行定义
+      path: '...',   # file则描述文件路径，custom则描述自定义python文件位置
+      path_rule_parse: '...'    # 描述解析规则文件所在路径
+    }
+  ]
+  objects: [
+    {
+      name: 'Object1',
+      type_num: 'only',   # only 单例模式; any 非单例
+      path_rule_parse: '...'
+    }
+  ]

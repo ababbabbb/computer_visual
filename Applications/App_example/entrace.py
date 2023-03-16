@@ -1,1 +1,4 @@
-import blinker
+
+
+def func_application():
+    ...

@@ -1,5 +1,5 @@
-from ..agree.syringe_agree import AgreeMeta
+from Framework.agree import AgreeMeta
 
 
-class Paser(metaclass=AgreeMeta):
+class Loader(metaclass=AgreeMeta):
     ...
