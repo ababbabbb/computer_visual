@@ -16,14 +16,14 @@ App:
     {
       name: 'Data1',
       type: 'file',  # file 外源性数据为文件; custom 外源性数据由自行定义
-      path: '...',   # file则描述文件路径，custom则描述自定义python文件位置
-      path_rule_parse: '...'    # 描述解析规则文件所在路径
+      path: '...',   # file 则描述文件路径，custom则描述自定义python文件位置
+      path_rule_parse: '...'    # 描述解析规则代码文件所在路径
     }
   ]
   objects: [
     {
       name: 'Object1',
       type_num: 'only',   # only 单例模式; any 非单例
-      path_rule_parse: '...'
+      path_rule_parse: '...'    # 描述解析规则代码文件所在路径
     }
   ]
