@@ -17,7 +17,7 @@ class Loader(metaclass=AgreeMeta):
         self.fk.type_work = content['App']['type_work']
         self.fk.debug = content['App']['debug']
 
-        # @@@@:创建对象——》
+        # TODO:创建对象——》
         #            使用runner——》
         #            runner是一个创建对象的工厂——》
         #            该工厂创建的是包裹对象的代理——》
