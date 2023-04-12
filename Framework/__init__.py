@@ -1,6 +1,6 @@
 from .loader.paser_config import Loader
 from .actuator.runner import Runner
-from . import template
+from Framework.actuator.meta_aop import InterfaceMeta
 
 
 class FK:
@@ -28,5 +28,5 @@ class FK:
 
 __all__ = [
     'FK',
-    'template'
+    'InterfaceMeta'
 ]
