@@ -33,6 +33,6 @@ class DataInterfaceMeta(InterfaceMeta):
     aop_this = _Aop
 
 
-__al__ = [
+__all__ = [
     'DataInterfaceMeta'
 ]
