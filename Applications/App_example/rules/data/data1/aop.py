@@ -16,6 +16,8 @@ class _Aop:
         def arbiter_around(self, *args, **kwargs) -> bool:
             ...
 
+            return False
+
         @staticmethod
         def around(self, *args, **kwargs):
             ...
